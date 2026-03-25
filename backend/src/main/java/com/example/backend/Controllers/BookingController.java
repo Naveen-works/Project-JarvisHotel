@@ -4,7 +4,6 @@ import com.example.backend.DTOs.BookingRequest;
 import com.example.backend.DTOs.BookingResponse;
 import com.example.backend.Services.BookingService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,12 +19,15 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/bookings")
-@RequiredArgsConstructor
 public class BookingController {
 
 	private final BookingService bookingService;
 
-	@PostMapping
+    public BookingController(BookingService bookingService) {
+        this.bookingService = bookingService;
+    }
+
+    @PostMapping
 	public ResponseEntity<BookingResponse> createBooking(@Valid @RequestBody BookingRequest request,
 														 Authentication authentication) {
 		return ResponseEntity.ok(bookingService.createBooking(authentication.getName(), request));
