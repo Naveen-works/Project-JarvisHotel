@@ -182,3 +182,78 @@
     border-right-color: var(--border);
   }
 }
+
+/* App additions: simple layout, navbar, cards, modal */
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 16px 40px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.navbar .brand {
+  font-weight: 700;
+  font-size: 18px;
+}
+.nav-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: #1e90ff;
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+.search-bar input,
+.search-bar select {
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--card-bg, #fff);
+}
+.card h3 { margin: 0 0 8px 0 }
+.amenities { font-size: 13px; color: #444 }
+.room-list { margin-top: 8px }
+.room { display:flex; justify-content:space-between; align-items:center; padding:6px 0 }
+
+.modal-backdrop {
+  position: fixed; left:0; right:0; bottom:0; top:0; background: rgba(0,0,0,0.4);
+  display:flex; align-items:flex-end; justify-content:center;
+}
+.modal { background: white; width:100%; max-width:480px; border-radius:8px 8px 0 0; padding:16px }
+
+.dashboard { margin-top: 16px }
+.booking { border:1px solid var(--border); padding:10px; border-radius:6px; margin-bottom:8px }
+
